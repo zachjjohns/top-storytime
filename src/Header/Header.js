@@ -5,7 +5,7 @@ import React from 'react'
 export default function Header() {
   return (
     <header>
-      <h1>Header!</h1>
+      <h1>Top StoryTime</h1>
     </header>
   )
 }
