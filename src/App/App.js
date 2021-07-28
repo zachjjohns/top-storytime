@@ -2,7 +2,7 @@ import './App.css';
 import Header from '../Header/Header';
 import StoryList from '../StoryList/StoryList';
 import { getHomeStories } from '../apiCalls';
-
+import { Switch, Route } from 'react-router-dom';
 import React, { Component } from 'react'
 
 export default class App extends Component {
