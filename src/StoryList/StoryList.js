@@ -7,6 +7,10 @@ export default function StoryList({ stories }) {
     return (
       <StoryCard
         id={story.uri}
+        title={story.title}
+        byLine={story.byline}
+        abstract={story.abstract}
+        url={story.url}
         imgLarge={story.multimedia[0].url}
         imgThumb={story.multimedia[3].url}
       />

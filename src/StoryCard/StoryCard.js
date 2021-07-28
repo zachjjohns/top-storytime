@@ -1,11 +1,11 @@
-import "./StoryCard.css";
-
+import './StoryCard.css';
+import { Link } from 'react-router-dom';
 import React from 'react'
 
-export default function StoryCard() {
+export default function StoryCard({ id, title, byLine, abstract, url, imgLarge, imgThumb }) {
   return (
-    <div>
-      <h2>Story Card details</h2>
-    </div>
+    <Link to={`/${id}`} className="story-card" id={id}>
+      <h2>{title}</h2>
+    </Link>
   )
 }
