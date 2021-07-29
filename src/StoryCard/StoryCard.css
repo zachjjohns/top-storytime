@@ -1,0 +1,32 @@
+.story-link {
+  text-decoration: none;
+}
+
+.story-card {
+  height: 200px;
+  width: 340px;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 1em;
+  margin: 1em;
+  box-shadow: 0px 0px 10px black;
+}
+
+.story-title {
+  color: white;
+  font-size: 22px;
+  font-weight: bold;
+  text-shadow: 0px 0px 5px black;
+  padding: .3em;
+}
+.story-by {
+  color: white;
+  font-weight: bold;
+  font-size: 14px;
+  text-shadow: 0px 0px 5px black;
+}
