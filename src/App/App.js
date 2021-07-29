@@ -15,8 +15,8 @@ export default class App extends Component {
     };
   }
 
-  getStory = (title) => {
-    return this.state.stories.find(story => story.title === title);
+  getStory = (date) => {
+    return this.state.stories.find(story => story.published_date === date);
   };
 
   componentDidMount = async () => {
@@ -29,7 +29,6 @@ export default class App extends Component {
   };
 
   render() {
-    console.log(this.getStory("nyt://article/47562e7a-343c-5ab5-a7f4-085f55ee3d94"))
     return (
       <>
         <Header />
@@ -38,12 +37,13 @@ export default class App extends Component {
             <StoryList stories={this.state.stories} />
           </Route>
           <Route
-            path="/:title"
+            path="/:published_date"
             render={({ match }) => {
-              console.log(match.params);
-              const { title } = match.params;
-              let story = this.getStory(title);
-              return <StoryDetails story={story} title={title} />;
+              const { published_date } = match.params;
+              console.log(published_date);
+              let story = this.getStory(published_date);
+              console.log(story);
+              return <StoryDetails story={story}/>;
             }}
           />
         </Switch>

@@ -11,7 +11,7 @@ export default class StoryDetails extends Component {
   render() {
     return (
       <main>
-        <h2>boop</h2>
+        <h2>{this.state.story.title}</h2>
       </main>
     )
   }
