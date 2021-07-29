@@ -18,8 +18,8 @@ export default function StoryList({ stories }) {
     )
   })
   return (
-    <>
+    <main className="card-container">
       {storyCards}
-    </>
+    </main>
   )
 }
