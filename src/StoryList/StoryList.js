@@ -7,6 +7,7 @@ export default function StoryList({ stories }) {
     return (
       <StoryCard
         id={story.uri}
+        key={story.uri}
         title={story.title}
         byLine={story.byline}
         abstract={story.abstract}
