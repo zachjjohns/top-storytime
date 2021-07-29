@@ -49,9 +49,7 @@ export default class App extends Component {
             path="/:published_date"
             render={({ match }) => {
               const { published_date } = match.params;
-              console.log(published_date);
               let story = this.getStory(published_date);
-              console.log(story);
               return <StoryDetails story={story} />;
             }}
           />
