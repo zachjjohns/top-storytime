@@ -23,3 +23,17 @@ header {
   border-radius: 5px;
   padding: .5em;
 }
+
+@media screen and (max-width: 500px) {
+  header {
+    flex-direction: column;
+  }
+  
+  .search-stories {
+    position: relative;
+    top: 0;
+    right: 0;
+    margin: 1em;
+    margin-top: 0;
+  }
+}
