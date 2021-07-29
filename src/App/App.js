@@ -11,13 +11,10 @@ export default class App extends Component {
     super();
     this.state = {
       stories: [],
-      error: "",
+      search: '',
+      error: '',
     };
   }
-
-  getStory = (date) => {
-    return this.state.stories.find(story => story.published_date === date);
-  };
 
   componentDidMount = async () => {
     try {
@@ -28,13 +25,25 @@ export default class App extends Component {
     }
   };
 
+  getStory = (date) => {
+    return this.state.stories.find((story) => story.published_date === date);
+  };
+
+  handleChange = (event) => {
+    this.setState({search: event.target.value});
+  }
+
+  removeSearchValue = () => {
+    this.setState({search: ''});
+  }
+
   render() {
     return (
       <>
-        <Header />
+        <Header searchValue={this.state.search} handleChange={this.handleChange} />
         <Switch>
           <Route exact path="/">
-            <StoryList stories={this.state.stories} />
+            <StoryList stories={this.state.stories} searchValue={this.state.search}/>
           </Route>
           <Route
             path="/:published_date"
@@ -43,7 +52,7 @@ export default class App extends Component {
               console.log(published_date);
               let story = this.getStory(published_date);
               console.log(story);
-              return <StoryDetails story={story}/>;
+              return <StoryDetails story={story} />;
             }}
           />
         </Switch>
