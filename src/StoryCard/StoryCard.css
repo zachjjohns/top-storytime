@@ -13,8 +13,13 @@
   text-align: center;
   text-decoration: none;
   border-radius: 1em;
-  margin: 1em;
+  margin: .5em;
   box-shadow: 0px 0px 10px black;
+}
+
+.story-card:hover {
+  opacity: .8;
+  cursor: pointer;
 }
 
 .story-title {
