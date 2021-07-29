@@ -2,7 +2,7 @@ import "./StoryList.css";
 import StoryCard from '../StoryCard/StoryCard';
 import React from 'react'
 
-export default function StoryList({ stories }) {
+export default function StoryList({ stories, searchValue }) {
   const storyCards = stories.map(story => {
     return (
       <StoryCard
@@ -17,6 +17,17 @@ export default function StoryList({ stories }) {
       />
     )
   })
+
+  if (searchValue) {
+    const filteredStories = storyCards.filter(story => story.props.title.toLowerCase().includes(searchValue.toLowerCase()));
+    return (
+      <main className="card-container">
+        {!filteredStories.length && <h2>No stories match your search.</h2>}
+        {filteredStories}
+      </main>
+    )
+  }
+
   return (
     <main className="card-container">
       {storyCards}

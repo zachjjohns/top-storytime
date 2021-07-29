@@ -1,7 +1,25 @@
 header {
   border-bottom: 2px solid black;
+  display: flex;
+  width: 100%;
 }
 
 .app-title {
   text-align: center;
+  justify-self: flex-start;
+  margin-left: 1em;
+  text-decoration: none;
+  color: black;
+}
+
+.app-title:hover {
+  opacity: .5;
+}
+
+.search-stories {
+  position: absolute;
+  top: 2em;
+  right: 2em;
+  border-radius: 5px;
+  padding: .5em;
 }

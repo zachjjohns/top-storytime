@@ -8,6 +8,7 @@ export default class StoryDetails extends Component {
       story: props.story
     }
   }
+  
   render() {
     return (
       <main className="details-container">
