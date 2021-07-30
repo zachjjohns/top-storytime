@@ -15,7 +15,7 @@ export default class StoryDetails extends Component {
       return (
       <div className="details-error">
         <h2>Story not found! Please reload or return home</h2>
-        <Link to ="/">Return Home</Link>
+        <Link to ="/" aria-label="Return Home">Return Home</Link>
       </div>
       )
     }
