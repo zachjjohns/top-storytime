@@ -26,6 +26,7 @@ export default class App extends Component {
   };
 
   getStory = (date) => {
+
     return this.state.stories.find((story) => story.published_date === date);
   };
 
@@ -41,6 +42,7 @@ export default class App extends Component {
     return (
       <>
         <Header searchValue={this.state.search} handleChange={this.handleChange} />
+        {this.state.error && <h2>{this.state.error}</h2>}
         <Switch>
           <Route exact path="/">
             <StoryList stories={this.state.stories} searchValue={this.state.search}/>
@@ -50,6 +52,7 @@ export default class App extends Component {
             render={({ match }) => {
               const { published_date } = match.params;
               let story = this.getStory(published_date);
+              console.log(story)
               return <StoryDetails story={story} />;
             }}
           />
