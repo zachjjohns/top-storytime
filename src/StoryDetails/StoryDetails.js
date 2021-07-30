@@ -1,15 +1,24 @@
 import './StoryDetails.css';
-import React, { Component } from 'react'
-
+import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 export default class StoryDetails extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      story: props.story
+      story: props.story,
+      error: "",
     }
   }
   
   render() {
+    if (!this.state.story) {
+      return (
+      <div className="details-error">
+        <h2>Story not found! Please reload or return home</h2>
+        <Link to ="/">Return Home</Link>
+      </div>
+      )
+    }
     return (
       <main className="details-container">
         <h2 className="details-title">{this.state.story.title}</h2>
