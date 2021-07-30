@@ -52,7 +52,6 @@ export default class App extends Component {
             render={({ match }) => {
               const { published_date } = match.params;
               let story = this.getStory(published_date);
-              console.log(story)
               return <StoryDetails story={story} />;
             }}
           />
